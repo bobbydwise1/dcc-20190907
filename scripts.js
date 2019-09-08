@@ -34,12 +34,11 @@ $(document).ready(function() {
   $('#form1').submit(function(){
     event.preventDefault()
     input1 = $('#input-1').val()
-    input1 = input1.replace(/\'/g,'"')
-    input1 = JSON.parse(input1)
+    console.log(input1)
     input2 = $('#input-2').val()
     console.log(input1)
     console.log(input2)
-    $('#output-1').text(input1)
+    $('#output-1').text(JSON.stringify(multiline(input1,input2)))
   })
 
 });

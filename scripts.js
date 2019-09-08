@@ -8,11 +8,11 @@ You can assume that there are no spaces at the ends of the string and that there
 For example, given the string "the quick brown fox jumps over the lazy dog" and k = 10, you should return: ["the quick", "brown fox", "jumps over", "the lazy", "dog"]. No string in the list has a length of more than 10.
 */
 
-const multiline = (yourString) => {
+const multiline = (yourString, k) => {
   let copied = yourString.split(" ")
   let output = []
   for ( element of copied ) {
-    if ((output.length == 0)|| (output[output.length-1].length + element.length + 1 > 10 )) {
+    if ((output.length == 0)|| (output[output.length-1].length + element.length + 1 > k )) {
       output.push(element)
     } else {
       output[output.length-1] = output[output.length-1] + ' ' +  element
@@ -23,8 +23,11 @@ const multiline = (yourString) => {
 
 const test0string = 'The quick brown fox jumps over the lazy dog.'
 const test0k = 10
+const test1string = 'The rain in Spain rains again.'
+const test1k = 15
 
-console.log(multiline(test0string))
+console.log(multiline(test0string,test0k))
+console.log(multiline(test1string,test1k))
 
 $(document).ready(function() {
 

@@ -9,7 +9,16 @@ For example, given the string "the quick brown fox jumps over the lazy dog" and 
 */
 
 const multiline = (yourString) => {
-  return yourString.split(" ")
+  let copied = yourString.split(" ")
+  let output = []
+  for ( element of copied ) {
+    if ((output.length == 0)|| (output[output.length-1].length + element.length + 1 > 10 )) {
+      output.push(element)
+    } else {
+      output[output.length-1] = output[output.length-1] + ' ' +  element
+    }
+  }
+  return output
 }
 
 const test0string = 'The quick brown fox jumps over the lazy dog.'
